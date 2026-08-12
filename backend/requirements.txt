@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-huggingface
+huggingface_hub
+chromadb
+langchain-chroma
+pypdf
+pydantic
+pydantic-settings
+python-dotenv
+httpx
+easyocr
+pymupdf
