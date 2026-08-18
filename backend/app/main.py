@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router
 
 app = FastAPI(
-    title="Pakistan Law RAG Assistant API",
+    title="Juris AI",
     description="AI-powered legal information retrieval from Pakistani legal documents",
     version="1.0.0"
 )

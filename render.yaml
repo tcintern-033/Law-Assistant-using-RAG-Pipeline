@@ -10,7 +10,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.8
       - key: ALLOWED_ORIGINS
-        value: "*"
+        value: "https://rag-law-frontend.onrender.com"
       - key: CHROMA_PERSIST_DIRECTORY
         value: "./chroma_db"
       - key: HUGGINGFACEHUB_API_TOKEN
