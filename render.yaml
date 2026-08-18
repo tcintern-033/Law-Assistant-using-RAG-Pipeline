@@ -1,7 +1,7 @@
 services:
   - type: web
     name: rag-law-api
-    env: python
+    runtime: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
@@ -19,7 +19,7 @@ services:
 
   - type: web
     name: rag-law-frontend
-    env: static
+    runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
@@ -28,4 +28,4 @@ services:
         fromService:
           type: web
           name: rag-law-api
-          property: url
+          envVarKey: RENDER_EXTERNAL_URL
