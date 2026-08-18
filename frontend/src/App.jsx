@@ -17,7 +17,7 @@ function App() {
         {/* Header section */}
         <div className="text-center mb-8 animate-fade-in-down">
           <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-200 mb-3 tracking-tight">
-            🇵🇰 Pakistan Law Assistant
+            Juris AI
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
             AI-powered legal information retrieval from Pakistani legal documents

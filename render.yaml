@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: rag-law-api
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: CHROMA_PERSIST_DIRECTORY
+        value: "./chroma_db"
+      - key: HUGGINGFACEHUB_API_TOKEN
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+
+  - type: web
+    name: rag-law-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: rag-law-api
+          property: url
