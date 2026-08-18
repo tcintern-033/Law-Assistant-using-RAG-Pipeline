@@ -1,0 +1,113 @@
+{
+    "metrics": {
+        "correctness": 0.0,
+        "groundedness": 0.0
+    },
+    "results": [
+        {
+            "question": "What are the fundamental rights of citizens according to the Constitution of Pakistan?",
+            "expected": "The fundamental rights include equality before law, right to fair trial, freedom of speech, freedom of religion, etc.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "What is the punishment for cyber terrorism under PECA 2016?",
+            "expected": "Under PECA 2016, cyber terrorism is punishable with imprisonment which may extend to 14 years or with fine which may extend to 50 million rupees or both.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "According to the Contract Act 1872, what constitutes a valid contract?",
+            "expected": "A valid contract requires offer, acceptance, lawful consideration, lawful object, competent parties, and free consent.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "What is 'Qatl-i-Amd' under the Pakistan Penal Code?",
+            "expected": "Qatl-i-Amd is defined as intentional murder.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "Who can be appointed as a Judge of the Supreme Court of Pakistan?",
+            "expected": "A person who is a citizen of Pakistan and has been a judge of a High Court for at least five years or an advocate of a High Court for at least fifteen years.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "Does a contract made through electronic means have legal validity?",
+            "expected": "Yes, PECA 2016 and related laws provide legal recognition to electronic communications and contracts made through electronic means.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "How does PECA 2016 intersect with the Penal Code regarding defamation?",
+            "expected": "PECA covers defamation in cyberspace, while the PPC covers traditional criminal defamation.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "Is a contract involving an illegal act under the PPC valid?",
+            "expected": "No, under the Contract Act, an agreement with an unlawful object is void.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "What are the traffic rules in New York City?",
+            "expected": "The available legal documents do not contain enough information to answer this question reliably.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "How do I bake a chocolate cake?",
+            "expected": "The available legal documents do not contain enough information to answer this question reliably.",
+            "prediction": "The available legal documents do not contain enough information to answer this question reliably.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "What is the legal status of space travel in Pakistan?",
+            "expected": "The available legal documents do not contain enough information to answer this question reliably.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "What is the punishment for theft?",
+            "expected": "The punishment for theft (Sarqa) depends on the specific circumstances and value of stolen property under the Pakistan Penal Code.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "Can a minor enter into a contract?",
+            "expected": "Under the Contract Act 1872, an agreement by a minor is generally void ab initio, as a minor is not competent to contract.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "What happens if a person is forced to sign a contract at gunpoint?",
+            "expected": "A contract signed at gunpoint lacks free consent (it involves coercion), making the contract voidable. It is also an offense under the PPC.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        },
+        {
+            "question": "Is hate speech on Facebook a crime?",
+            "expected": "Yes, under PECA 2016, hate speech and offenses against the dignity of a natural person on electronic platforms are punishable crimes.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "correctness": 0,
+            "groundedness": 0
+        }
+    ]
+}

@@ -13,3 +13,5 @@ python-dotenv
 httpx
 easyocr
 pymupdf
+langsmith
+sentence-transformers
