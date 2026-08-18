@@ -63,4 +63,7 @@ def generate_answer(question: str, docs: list) -> tuple[str, int]:
         # Identify rate limits/quota exhaustion (HTTP 429)
         if "429" in error_msg or "resource_exhausted" in error_msg or "quota" in error_msg:
             raise RuntimeError("The AI service is temporarily rate-limited or out of quota. Please try again shortly.")
-        raise RuntimeError("An error occurred while generating the answer from the legal context.")
+        # Identify permission errors (HTTP 403)
+        if "403" in error_msg or "forbidden" in error_msg or "permissions" in error_msg:
+            raise RuntimeError("The configured AI API token lacks sufficient permissions (e.g., Serverless Inference API is disabled). Please update your API key settings.")
+        raise RuntimeError(f"An error occurred while generating the answer from the legal context: {e}")

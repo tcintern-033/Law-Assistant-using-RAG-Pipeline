@@ -55,18 +55,14 @@ Score (1 or 0): """
 def main():
     print("Starting local evaluations using HuggingFace (LangSmith bypassed)...")
     
-    # Setup Judge LLM
     try:
-        llm = HuggingFaceEndpoint(
-            repo_id="mistralai/Mistral-7B-Instruct-v0.3",
-            task="text-generation",
-            max_new_tokens=10,
-            do_sample=False,
-            temperature=0.1
-        )
+        from app.llm.factory import get_llm_provider
+        from langchain_core.output_parsers import StrOutputParser
+        provider = get_llm_provider()
+        llm = provider.langchain_llm
         # Create chains
-        correctness_chain = eval_prompt | llm
-        groundedness_chain = groundedness_prompt | llm
+        correctness_chain = eval_prompt | llm | StrOutputParser()
+        groundedness_chain = groundedness_prompt | llm | StrOutputParser()
     except Exception as e:
         print(f"Failed to initialize HuggingFace Judge: {e}")
         return
@@ -76,7 +72,7 @@ def main():
     groundedness_total = 0
     
     for i, example in enumerate(examples):
-        print(f"\nEvaluating {i+1}/{len(examples)}: {example['question']}")
+        print(f"\nEvaluating {i+1}/{len(examples)}: {example['question']}", flush=True)
         
         # 1. Run RAG Pipeline
         try:
@@ -88,7 +84,7 @@ def main():
             answer = f"Error: {e}"
             context_str = ""
             
-        print(f"Prediction: {answer[:100]}...")
+        print(f"Prediction: {answer[:100]}...", flush=True)
         
         # 2. Evaluate Correctness
         try:

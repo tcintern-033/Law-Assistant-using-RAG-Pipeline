@@ -13,5 +13,6 @@ python-dotenv
 httpx
 easyocr
 pymupdf
-langsmith
-sentence-transformers
+langsmith>=0.1.0
+sentence-transformers>=2.2.0
+langchain-google-genai

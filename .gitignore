@@ -1,6 +1,12 @@
 # Virtual Environments
 .venv/
+env/
 
+# Environment Variables & Secrets
+.env
+*.env
+backend/.env
+frontend/.env
 
 # Python Cache & Build Artifacts
 __pycache__/

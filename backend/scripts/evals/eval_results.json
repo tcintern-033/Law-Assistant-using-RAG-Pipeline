@@ -7,105 +7,105 @@
         {
             "question": "What are the fundamental rights of citizens according to the Constitution of Pakistan?",
             "expected": "The fundamental rights include equality before law, right to fair trial, freedom of speech, freedom of religion, etc.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context does not contain information about the fundamental rights of citizens according to the Constitution of Pakistan. The context is from the Pakistan Electronic Crimes Act (PECA) 2016 and the Pakistan Penal Code, which do not include details about constitutional fundamental rights. Therefore, the available documents do not contain enough information to answer the question.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "What is the punishment for cyber terrorism under PECA 2016?",
             "expected": "Under PECA 2016, cyber terrorism is punishable with imprisonment which may extend to 14 years or with fine which may extend to 50 million rupees or both.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "Under PECA 2016, the punishment for cyber terrorism is imprisonment for a term which may extend to seven years or with fine which may extend to ten million rupees or with both. This is specified in Section 9 of PECA 2016.\n\nSource:\nDocument: Peca 2016\nPage: 18",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "According to the Contract Act 1872, what constitutes a valid contract?",
             "expected": "A valid contract requires offer, acceptance, lawful consideration, lawful object, competent parties, and free consent.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "According to the Contract Act 1872, a valid contract is constituted by certain elements. Specifically, the act defines what agreements are contracts in Section 10:\n\n10. What agreements are contracts\nAn agreement enforceable by law is a contract. \n\nThis means that for an agreement to be considered a contract, it must be enforceable by law. The act does not provide further detail on the specific elements required for a contract to be valid, but it sets the foundation that enforceability by law is a necessary condition.\n\nSource: The Contract Act, 1872, Section 10.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "What is 'Qatl-i-Amd' under the Pakistan Penal Code?",
             "expected": "Qatl-i-Amd is defined as intentional murder.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The term 'Qatl-i-Amd' is not directly mentioned in the provided legal context. However, the context does provide information related to 'Qatl-i-Shibhi-Amd', which is a similar concept. According to Section 316 of the Pakistan Penal Code:\n\n\"316. Punishment for qatl shibh-i-amd. Whoever commits qatl shibh-i-amd shall be liable to diyat and may also be punished with imprisonment of either description for a term which may extend to twenty five years as ta'zir.\"\n\nThis section outlines the punishment for 'Qatl-i-Shibhi-Amd', which is a form of manslaughter. While 'Qatl-i-Amd' is not explicitly defined, it is reasonable to infer that 'Qatl-i-Shibhi-Amd' is a related concept, possibly a specific type of manslaughter. For a precise definition of 'Qatl-i-Amd', one would need to refer to additional legal sources or consult the relevant sections of the Pakistan Penal Code.\n\nSource: Pakistan Penal Code, Section 316, Page 110.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "Who can be appointed as a Judge of the Supreme Court of Pakistan?",
             "expected": "A person who is a citizen of Pakistan and has been a judge of a High Court for at least five years or an advocate of a High Court for at least fifteen years.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context does not contain specific information regarding the appointment of Judges of the Supreme Court of Pakistan. The context mentions qualifications for members of an Authority (likely referring to an information commission or similar body under Peca 2016) but does not address the appointment of Judges of the Supreme Court. Therefore, based on the given documents, there is insufficient information to answer the question.\n\nFor accurate information on the appointment of Judges of the Supreme Court of Pakistan, you would need to refer to the Constitution of Pakistan or relevant sections of the Pakistan Penal Code or other applicable laws.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "Does a contract made through electronic means have legal validity?",
             "expected": "Yes, PECA 2016 and related laws provide legal recognition to electronic communications and contracts made through electronic means.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context does not explicitly address the legal validity of contracts made through electronic means. However, it does contain provisions related to electronic crimes and preventive measures under the Peca 2016 (Pakistan Electronic Crimes Act 2016). Specifically, Section 48 of the Peca 2016 outlines the prevention of electronic crimes and the penalties for violations, but it does not directly state the legal validity of electronic contracts.\n\nFor a more comprehensive answer, you may need to refer to the Pakistan Electronic Transactions Act 2002 or other relevant legislation that specifically addresses the legal validity and enforceability of electronic contracts.\n\nThe available documents do not contain enough information to definitively answer whether a contract made through electronic means has legal validity.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "How does PECA 2016 intersect with the Penal Code regarding defamation?",
             "expected": "PECA covers defamation in cyberspace, while the PPC covers traditional criminal defamation.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context from the Pakistan Penal Code does not contain any provisions related to defamation or PECA 2016 (Pakistan Electronic Crimes Act 2016). Therefore, based on the given documents, there is no intersection between the Penal Code and PECA 2016 regarding defamation.\n\nFor further information on how PECA 2016 intersects with defamation, you would need to refer to the specific sections of PECA 2016 that deal with online content and communications, as well as relevant case law and other legal documents.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "Is a contract involving an illegal act under the PPC valid?",
             "expected": "No, under the Contract Act, an agreement with an unlawful object is void.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context from the Contract Act 1872 does not directly address contracts involving illegal acts under the Penal Code (Penal Code, or PPC). However, the Contract Act 1872 does state that agreements which are illegal are void. \n\nFor a more specific answer regarding contracts involving illegal acts under the PPC, you would need to refer to the Penal Code, 1860 (PPC). According to Section 23 of the PPC, \"Every contract, the object of which, or any of the consequences of which, is to cause death or personal injury to any person, is void.\"\n\nWhile the Contract Act 1872 does not provide specific details on this, it is generally understood that if a contract involves an illegal act under the PPC, such a contract would be void. For precise legal advice, you should consult the PPC or seek legal counsel.\n\nThe relevant section from the Contract Act 1872 is:\n- **Section 29**: Agreements, the meaning of which is not certain, or capable of being made certain, are void. (Source: Contract Act 1872, Page 22)\n\nFor the PPC, you would need to refer to:\n- **Section 23**: Every contract, the object of which, or any of the consequences of which, is to cause death or personal injury to any person, is void. (Source: Penal Code, 1860)",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "What are the traffic rules in New York City?",
             "expected": "The available legal documents do not contain enough information to answer this question reliably.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context does not contain any information related to traffic rules in New York City. The context is related to data retention and investigation powers under the Prevention of Electronic Crimes Act, 2016 (PECA 2016) in Pakistan. Therefore, the available documents do not contain enough information to answer the question about traffic rules in New York City.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "How do I bake a chocolate cake?",
             "expected": "The available legal documents do not contain enough information to answer this question reliably.",
-            "prediction": "The available legal documents do not contain enough information to answer this question reliably.",
+            "prediction": "The provided legal context does not contain any information related to baking a chocolate cake. Therefore, the available documents do not contain enough information to answer the question.\n\nIf you need a recipe or instructions for baking a chocolate cake, you may want to refer to culinary resources or baking guides.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "What is the legal status of space travel in Pakistan?",
             "expected": "The available legal documents do not contain enough information to answer this question reliably.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context does not contain any information related to the legal status of space travel in Pakistan. Therefore, based on the available documents, there is insufficient information to answer the question regarding the legal status of space travel in Pakistan.\n\nThe retrieved context includes provisions from the Pakistan Penal Code and the Contract Act 1872, which do not address space travel regulations.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "What is the punishment for theft?",
             "expected": "The punishment for theft (Sarqa) depends on the specific circumstances and value of stolen property under the Pakistan Penal Code.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The punishment for theft is imprisonment of either description for a term which may extend to three years, or with fine, or with both. Additionally, if the theft is committed in a dwelling house, tent, or vessel used as a human dwelling or for the custody of property, the punishment is imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.\n\nFor theft by a clerk or servant of property in the possession of the master or employer, the punishment is imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.\n\nFor theft of a car or other motor vehicles, the punishment is imprisonment of either description for a term which may extend to seven years and with fine not exceeding the value of the stolen car or motor vehicle.\n\nFor theft committed with preparation for causing death, hurt, or restraint, the punishment is rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine.\n\nThe relevant provisions are:\n- Section 379 of the Pakistan Penal Code (Page 136)\n- Section 380 of the Pakistan Penal Code (Page 136)\n- Section 381A of the Pakistan Penal Code (Page 137)\n- Section 382 of the Pakistan Penal Code (Page 138)",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "Can a minor enter into a contract?",
             "expected": "Under the Contract Act 1872, an agreement by a minor is generally void ab initio, as a minor is not competent to contract.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "The provided legal context does not contain specific information regarding whether a minor can enter into a contract. The context mainly discusses various aspects of contracts, such as specific performance, arbitration, uncertainty, and performance, but it does not address the legal capacity of minors to enter into contracts.\n\nFor information on the legal capacity of minors to enter into contracts, you would need to refer to the Pakistan Penal Code or the Contract Act 1872, specifically sections related to the age of majority and the validity of contracts entered into by minors.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "What happens if a person is forced to sign a contract at gunpoint?",
             "expected": "A contract signed at gunpoint lacks free consent (it involves coercion), making the contract voidable. It is also an offense under the PPC.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a843411-6637b3c534afdfa7357e3ced;0e9f3d21-14be-4003-b5e6-fd1ded53b45a)\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\n\nYou have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.",
             "correctness": 0,
             "groundedness": 0
         },
         {
             "question": "Is hate speech on Facebook a crime?",
             "expected": "Yes, under PECA 2016, hate speech and offenses against the dignity of a natural person on electronic platforms are punishable crimes.",
-            "prediction": "Error: An error occurred while generating the answer from the legal context.",
+            "prediction": "Error: An error occurred while generating the answer from the legal context: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a843414-4b3e786b7d8878c96a6df3b1;49998c7d-b2b0-49c5-9365-3d374343f2af)\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\n\nYou have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.",
             "correctness": 0,
             "groundedness": 0
         }
