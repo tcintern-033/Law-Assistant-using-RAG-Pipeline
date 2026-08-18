@@ -18,10 +18,8 @@ services:
       - key: GOOGLE_API_KEY
         sync: false
 
-  - type: web
+  - type: static
     name: rag-law-frontend
-    runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
