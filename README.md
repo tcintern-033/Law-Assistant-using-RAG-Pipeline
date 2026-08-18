@@ -1,19 +1,19 @@
 # Law Assistant using RAG Pipeline
 
-A production-grade, 100% Hugging Face Retrieval-Augmented Generation (RAG) assistant designed for grounded legal information retrieval from Pakistani laws (Constitution, Pakistan Penal Code, Contract Act 1872, PECA 2016).
+A production-grade Retrieval-Augmented Generation (RAG) assistant designed for grounded legal information retrieval from Pakistani laws (Constitution, Pakistan Penal Code, Contract Act 1872, PECA 2016).
 
 ---
 
-## Decoupled Architecture
+## Flexible LLM Architecture
 
-The application runs entirely through **Hugging Face** models for both document embeddings and LLM answer generation, ensuring zero dependence on Google API limits.
+The application is built with a flexible LLM routing layer, allowing you to seamlessly switch between **Google Gemini** models and open-source **Hugging Face** models.
 
 ```text
 [ Document Corpus (PDFs) ]
            ↓
 [ PyMuPDF + EasyOCR (Urdu Support) ]
            ↓
-[ Local Hugging Face Embeddings ] ─── (sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2)
+[ Local Hugging Face Embeddings ] ─── (sentence-transformers)
            ↓
 [ ChromaDB (Vector Store) ]
            ↓
@@ -23,7 +23,7 @@ The application runs entirely through **Hugging Face** models for both document 
            ↓
 [ Context Safety Guard (Max 12,000 Chars) ]
            ↓
-[ Hugging Face LLM Provider ] ────── (mistralai/Mistral-7B-Instruct-v0.3 / generation layer)
+[ Dynamic LLM Provider ] ────── (Google Gemini OR Hugging Face)
            ↓
 [ Grounded Answer + Legal Citations ]
 ```
@@ -32,13 +32,12 @@ The application runs entirely through **Hugging Face** models for both document 
 
 ## Key Features
 
-- **100% Hugging Face Pipeline:** Embeddings run locally via Hugging Face (`sentence-transformers`), and text generation runs through Hugging Face LLM models (e.g. `Mistral-7B-Instruct`).
-- **Zero Gemini API Dependency:** No Google API keys or Google Cloud rate limits.
-- **Cross-Lingual & Urdu OCR Support:** Integrated `PyMuPDF` and `EasyOCR` to read scanned or legacy non-Unicode Urdu PDFs (e.g. Constitution of Pakistan).
+- **Multi-Provider Support:** Instantly switch between `gemini` and `huggingface` models by changing a single `.env` variable.
+- **Cross-Lingual & Urdu OCR Support:** Integrated `PyMuPDF` and `EasyOCR` to read scanned or legacy non-Unicode Urdu PDFs.
 - **Resumable Ingestion with Deterministic SHA-256 Hashes:** Prevents re-indexing existing chunks, making ingestion resumable and idempotent.
-- **Collection Compatibility Safeguard:** Verifies that ChromaDB collections are accessed only with matching embedding models, preventing dimension mismatch errors.
 - **Strict Prompt Grounding & Citations:** Generates exact section numbers, penalties, fine amounts, and page citations, refusing to hallucinate if context is missing.
 - **Modern Responsive UI:** Built with React, Vite, and Tailwind CSS with dark mode aesthetics and glassmorphism.
+- **Automated LLM-as-a-Judge Evaluation:** Built-in scripts to evaluate model correctness and groundedness using LangSmith/LangChain evaluators.
 
 ---
 
@@ -46,7 +45,8 @@ The application runs entirely through **Hugging Face** models for both document 
 
 - **Python:** 3.10+
 - **Node.js:** 18+
-- **Hugging Face User Access Token:** (Free key available at [HuggingFace Tokens](https://huggingface.co/settings/tokens))
+- **Hugging Face Token:** (Free key available at [HuggingFace Tokens](https://huggingface.co/settings/tokens))
+- **Google API Key:** (Free key available at [Google AI Studio](https://aistudio.google.com/))
 
 ---
 
@@ -55,7 +55,7 @@ The application runs entirely through **Hugging Face** models for both document 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/tcintern-033/Law-Assistant-using-RAG-Pipeline.git
-cd RAG-Law-Assistant
+cd Law-Assistant-using-RAG-Pipeline
 ```
 
 ### 2. Backend Setup
@@ -76,19 +76,21 @@ Create a `.env` file inside the `backend/` directory by copying `.env.example`:
 ```bash
 cp .env.example .env
 ```
-Fill in your Google API key in `backend/.env`:
+Configure your desired LLM Provider in `backend/.env`:
 ```env
-GOOGLE_API_KEY=your_actual_google_api_key
-LLM_PROVIDER=google
-LLM_MODEL=gemini-2.0-flash
+HUGGINGFACEHUB_API_TOKEN=your_huggingface_token_here
+GOOGLE_API_KEY=your_gemini_api_key_here
+
+# Choose between 'gemini' or 'huggingface'
+LLM_PROVIDER=gemini
+GEMINI_MODEL=gemini-1.5-flash
+HF_LLM_MODEL=Qwen/Qwen2.5-7B-Instruct
 
 EMBEDDING_PROVIDER=huggingface
 HF_EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
 CHROMA_PERSIST_DIRECTORY=../chroma_db
 RETRIEVAL_K=8
-FINAL_CONTEXT_K=4
-MAX_CONTEXT_CHARS=12000
 SIMILARITY_THRESHOLD=30.0
 ```
 
@@ -97,18 +99,6 @@ SIMILARITY_THRESHOLD=30.0
 cd ../frontend
 npm install
 ```
-
----
-
-## Document Ingestion
-
-1. Place your Pakistani legal PDFs (e.g., `Constitution.pdf`, `Pakistan_Penal_Code.pdf`, `Contract_Act_1872.pdf`, `Peca_2016.pdf`) inside the `data/` directory at the project root.
-2. Run the ingestion script:
-   ```bash
-   cd backend
-   python scripts/ingest.py
-   ```
-   *(The script uses deterministic SHA-256 chunk hashing and skips already-indexed chunks!)*
 
 ---
 
@@ -131,17 +121,36 @@ UI runs at: `http://localhost:5173`
 
 ---
 
-## Testing & Benchmarking
+## Running Evaluations
 
-You can run the full automated test suite across all legal categories:
+You can evaluate the LLM RAG pipeline's Correctness and Groundedness against a custom legal benchmark dataset.
+
 ```bash
 cd backend
-python scripts/test_all_questions.py
+python scripts/evals/run_evals.py
 ```
-This outputs live answers and generates a formatted `benchmark_results.md` report.
+This will run the questions through your configured `LLM_PROVIDER` and use the same provider as a "judge" to score the outputs out of 1.
+
+---
+
+## Deployment to Render
+
+This project is configured and ready to be deployed for free on [Render](https://render.com/).
+
+### Backend (Web Service)
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+- **Environment Variables:** Set your `GOOGLE_API_KEY` and ensure `ALLOWED_ORIGINS` points to your frontend URL.
+
+*(Note: Ensure your `chroma_db` is pushed to your Git repository so the backend has immediate access to the embedded legal documents!)*
+
+### Frontend (Static Site)
+- **Build Command:** `npm install && npm run build`
+- **Publish Directory:** `dist`
+- **Environment Variables:** Set `VITE_API_URL` to the Render backend URL you created above.
 
 ---
 
 ## License & Disclaimer
 
-**Educational Disclaimer:** This application is built for educational and research purposes only. Output generated by AI is not a substitute for professional legal advice. Always verify legal matters against official government gazettes (pakistancode.gov.pk).
+**Educational Disclaimer:** This application is built for educational and research purposes only. Output generated by AI is not a substitute for professional legal advice. Always verify legal matters against official government gazettes.
